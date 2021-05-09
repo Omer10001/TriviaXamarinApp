@@ -4,9 +4,8 @@
              x:Class="TriviaXamarinApp.Views.StartPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Login" Command=""/>
+            <Button Text="Sign up" Command=""/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
