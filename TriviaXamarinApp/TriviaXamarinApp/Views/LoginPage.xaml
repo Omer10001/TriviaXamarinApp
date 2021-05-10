@@ -4,9 +4,12 @@
              x:Class="TriviaXamarinApp.Views.LoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text="Email" />
+            <Entry Placeholder="" Text="{Binding Email}"/>
+            <Label Text="Password" />
+            <Entry Placeholder="" Text="{Binding Password}" />
+            <Button Text="" Command="{Binding LoginCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

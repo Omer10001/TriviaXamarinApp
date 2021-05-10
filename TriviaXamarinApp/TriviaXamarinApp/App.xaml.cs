@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TriviaXamarinApp.Services;
+using TriviaXamarinApp.Views;
 using TriviaXamarinApp.Models;
 using System.Threading.Tasks;
 
@@ -14,7 +15,7 @@ namespace TriviaXamarinApp
             InitializeComponent();
             
             
-            MainPage = new MainPage();
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()
