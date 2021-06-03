@@ -14,6 +14,10 @@ namespace TriviaXamarinApp.ViewModels
 {
     class StartPageVM
     {
+        public StartPageVM()
+        {
+
+        }
         #region INOTIFYEVENT
         public event PropertyChangedEventHandler PropertyChanged;
 

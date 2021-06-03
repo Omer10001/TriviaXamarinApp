@@ -10,6 +10,7 @@ namespace TriviaXamarinApp
 {
     public partial class App : Application
     {
+        static User currentUser;
         public App()
         {
             InitializeComponent();
