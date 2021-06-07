@@ -14,9 +14,9 @@ namespace TriviaXamarinApp
         public App()
         {
             InitializeComponent();
-            
-            
-            MainPage = new StartPage();
+
+
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()

@@ -32,8 +32,10 @@ namespace TriviaXamarinApp.ViewModels
             task.Wait();
             User user = task.Result;
             ((App)Application.Current).currentUser = user;
+
             
         }
-       
+        public Action<Page> NavigateToPageEvent;
+
     }
 }

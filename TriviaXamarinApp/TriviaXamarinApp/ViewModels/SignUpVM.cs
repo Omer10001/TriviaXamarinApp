@@ -5,20 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using TriviaXamarinApp.Views;
+
 using System.Windows.Input;
 using TriviaXamarinApp.Models;
 using TriviaXamarinApp.Services;
 
-
 namespace TriviaXamarinApp.ViewModels
 {
-    class StartPageVM
+    class SignUpVM
     {
-        public StartPageVM()
-        {
-
-        }
         #region INOTIFYEVENT
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -27,21 +22,12 @@ namespace TriviaXamarinApp.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-        public ICommand MoveToNextPageCommand => new Command<int>(MoveToNextPage);
-        public void MoveToNextPage(int x)
+        public string Email { get; set; }
+        public string Password { get; set; }
+        ICommand SignUpCommand => new Command(SignUP);
+        public void SignUP()
         {
-            Page p;
-            if(x==0)
-            {
-                p = new LoginPage();
-            }
-            else
-            {
-                p = new SignUpPage();
-            }
-            if (NavigateToPageEvent != null)
-                NavigateToPageEvent(p);
+
         }
-        public Action<Page> NavigateToPageEvent;
     }
 }

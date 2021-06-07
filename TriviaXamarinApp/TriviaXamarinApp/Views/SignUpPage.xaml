@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TriviaXamarinApp.Views.StartPage">
+             x:Class="TriviaXamarinApp.Views.SignUpPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Login" Command="MoveToNextPageCommand" CommandParameter="0"/>
-            <Button Text="Sign up" Command="MoveToNextPageCommand" CommandParameter="1"/>
+            <Entry Placeholder="" />
+            <Entry Placeholder="" />
+            <Button Text="" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

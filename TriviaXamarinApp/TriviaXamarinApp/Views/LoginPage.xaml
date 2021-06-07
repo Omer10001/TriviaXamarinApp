@@ -4,7 +4,7 @@
              x:Class="TriviaXamarinApp.Views.LoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text=""  />
+            <Label Text="{Binding ErrorMessage}"  />
             <Label Text="Email" />
             <Entry Placeholder="" Text="{Binding Email}"/>
             <Label Text="Password" />

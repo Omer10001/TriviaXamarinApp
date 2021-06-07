@@ -14,9 +14,14 @@ namespace TriviaXamarinApp.Views
     {
         public LoginPage()
         {
-         
-            InitializeComponent();
+          
             this.BindingContext = new LoginPageVM();
+            ((LoginPageVM)BindingContext).NavigateToPageEvent += NavigateToPageAsync;
+            InitializeComponent();
+        }
+        public async void NavigateToPageAsync(Page p)
+        {
+            await Navigation.PushAsync(p);
         }
     }
 }
