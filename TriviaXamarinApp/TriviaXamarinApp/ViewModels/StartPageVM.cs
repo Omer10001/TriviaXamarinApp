@@ -13,7 +13,7 @@ using TriviaXamarinApp.Services;
 
 namespace TriviaXamarinApp.ViewModels
 {
-    class StartPageVM
+    class StartPageVM : INotifyPropertyChanged
     {
         public StartPageVM()
         {
@@ -27,11 +27,11 @@ namespace TriviaXamarinApp.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-        public ICommand MoveToNextPageCommand => new Command<int>(MoveToNextPage);
-        public void MoveToNextPage(int x)
+        public ICommand MoveToNextPageCommand => new Command<string>(MoveToNextPage);
+        public void MoveToNextPage(string x)
         {
             Page p;
-            if(x==0)
+            if(x== "0")
             {
                 p = new LoginPage();
             }

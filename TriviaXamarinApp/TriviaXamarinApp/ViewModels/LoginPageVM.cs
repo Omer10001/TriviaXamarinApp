@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using TriviaXamarinApp.Views;
 using System.Windows.Input;
 using TriviaXamarinApp.Models;
 using TriviaXamarinApp.Services;
 namespace TriviaXamarinApp.ViewModels
 {
-    class LoginPageVM
+    class LoginPageVM : INotifyPropertyChanged
     {
         #region INOTIFYEVENT
         public event PropertyChangedEventHandler PropertyChanged;
@@ -21,17 +21,51 @@ namespace TriviaXamarinApp.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-        public string ErrorMessage { get; set; }
+        private string errorMessage;
+        public string ErrorMessage
+        {
+            get
+            {
+                return errorMessage;
+            }
+            set
+            {
+                if (errorMessage != value)
+                {
+                    errorMessage = value;
+                    OnPropertyChanged("ErrorMessage");
+                }
+            }
+        }
         public string Email { get; set; }
         public string Password { get; set; }
-        ICommand LoginCommand => new Command(Login);
-        public void Login ()
+        public ICommand LoginCommand => new Command(Login);
+        public async void Login ()
         {
             TriviaWebAPIProxy proxy = TriviaWebAPIProxy.CreateProxy();
-            Task < User > task = proxy.LoginAsync(Email, Password);
-            task.Wait();
-            User user = task.Result;
-            ((App)Application.Current).currentUser = user;
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            {
+                ErrorMessage = "please fill in both fields";
+            }
+            else
+            {
+                
+                
+                User user = await proxy.LoginAsync(Email, Password);
+                if (user == null)
+                {
+                    ErrorMessage = "wrong email or password";
+                }
+                else
+                {
+                    ((App)Application.Current).currentUser = user;
+                    NavigateToPageEvent(new GamePage());
+                }
+                
+               
+
+            }
+           
 
             
         }

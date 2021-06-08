@@ -10,20 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace TriviaXamarinApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpPage : ContentPage
+    public partial class GamePage : ContentPage
     {
-        public SignUpPage()
+        public GamePage()
         {
-            BindingContext = new SignUpVM();
-
-            ((SignUpVM)BindingContext).NavigateToPageEvent += NavigateToPageAsync;
+            this.BindingContext = new GameVM();
             InitializeComponent();
         }
-        public async void NavigateToPageAsync(Page p)
-        {
-            await Navigation.PushAsync(p);
-        }
-      
-        
     }
 }

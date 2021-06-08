@@ -9,7 +9,7 @@
             <Entry Placeholder="" Text="{Binding Email}"/>
             <Label Text="Password" />
             <Entry Placeholder="" Text="{Binding Password}" />
-            <Button Text="" Command="{Binding LoginCommand}" />
+            <Button Text="Login" Command="{Binding LoginCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

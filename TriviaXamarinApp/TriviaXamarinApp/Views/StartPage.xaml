@@ -4,8 +4,8 @@
              x:Class="TriviaXamarinApp.Views.StartPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Login" Command="MoveToNextPageCommand" CommandParameter="0"/>
-            <Button Text="Sign up" Command="MoveToNextPageCommand" CommandParameter="1"/>
+            <Button Text="Login" Command="{Binding MoveToNextPageCommand}" CommandParameter="0"/>
+            <Button Text="Sign up" Command="{Binding MoveToNextPageCommand}" CommandParameter="1"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

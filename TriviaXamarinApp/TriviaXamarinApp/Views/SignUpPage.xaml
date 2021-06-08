@@ -4,9 +4,14 @@
              x:Class="TriviaXamarinApp.Views.SignUpPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="" />
-            <Entry Placeholder="" />
-            <Button Text="" />
+            <Label Text="{Binding ErrorMessage}" TextColor="Red"  />
+            <Label Text="Email" />
+            <Entry Placeholder="" Text="{Binding Email}"/>
+            <Label Text="Password" />
+            <Entry Placeholder="" Text="{Binding Password}" />
+            <Label Text="NickName" />
+            <Entry Placeholder="" Text="{Binding NickName}" />
+            <Button Text="Go" Command="{Binding SignUpCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

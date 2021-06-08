@@ -15,7 +15,7 @@ namespace TriviaXamarinApp.Views
         public StartPage()
         { 
 
-            InitializeComponent();
+          
             BindingContext = new StartPageVM();
            
             ((StartPageVM)BindingContext).NavigateToPageEvent += NavigateToPageAsync;

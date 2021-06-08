@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TriviaXamarinApp.Views.GamePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="" />
+            <Label  Text= "{Binding QuestionText}" FontSize="Large" TextColor="Black"/>
+            <Label   Text= "{Binding Result}" FontSize="Large"/>
+            <Label  Text="{Binding CounterText}" TextColor="Black"/>
+            <Button  Text= "{Binding Answer1}" Command= "{Binding AnswerClickedCommand}" CommandParameter = "0" HorizontalOptions="FillAndExpand"  HeightRequest="120"/>
+            <Button  Text= "{Binding Answer2}" Command= "{Binding AnswerClickedCommand}" CommandParameter = "1" HorizontalOptions="FillAndExpand"  HeightRequest="120"/>
+            <Button  Text= "{Binding Answer3}" Command= "{Binding AnswerClickedCommand}" CommandParameter = "2" HorizontalOptions="FillAndExpand"  HeightRequest="120"/>
+            <Button  Text= "{Binding Answer4}" Command= "{Binding AnswerClickedCommand}" CommandParameter = "3" HorizontalOptions="FillAndExpand"  HeightRequest="120"/>
+            
+         
+                <Button Text="Next question"  Command="{Binding NextQuestionCommand}" HorizontalOptions="Center"/>
+                
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
